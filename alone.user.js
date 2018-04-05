@@ -235,7 +235,7 @@ setInterval(function () {
 
 
 cssStyle = '#minimapbg{position: absolute; right: 1em; bottom: 1em;}#posyt{background-color: rgba(0, 0, 0, 0.75); color: rgb(250, 250, 250); text-align: center; line-height: 42px; vertical-align: middle; width: auto; height: auto; border-radius: 21px; padding: 6px;}#minimap-text{display: none;}#minimap-box{position: relative; width:420px; height:300px;}#minimap, #minimap-board, #minimap-cursor{width: 100%; height: 100%; position:absolute; top:0; left:0;}#minimap{z-index:1;}#minimap-board{z-index:2;}#minimap-cursor{z-index:3;}#minimap-config{line-height:20px;}.map-clickable{cursor: pointer;}.map-zoom{font-weight:bold;}#colors{margin-left: 0.333em !important;}#app > div:nth-child(1) > div:nth-child(9){position: absolute; bottom: 6em; left: 0.3333em;}#app > div:nth-child(1) > div:nth-child(9) > div:nth-child(2){bottom: initial !important; left: initial !important; position: initial !important; display: inline-block !important;}#app > div:nth-child(1) > div:nth-child(9) > div:nth-child(1){bottom: initial !important; left: initial !important; position: initial !important; display: inline-block !important;}';
-htmlFragment = '<div id="minimapbg"> <div class="posy" id="posyt"> <div id="minimap-text"></div><div id="minimap-box"> <canvas id="minimap"></canvas> <canvas id="minimap-board"></canvas> <canvas id="minimap-cursor"></canvas> </div><div id="minimap-config"> <span class="map-clickable" id="hide-map">Gizle</span> | <span class="map-clickable" id="follow-mouse">Fareyi takip et</span> | <span class="map-clickable" id="toggle-grid">Izgara </span> | Yakınlaştırma: <span class="map-clickable map-zoom" id="zoom-plus">+</span> | <span class="map-clickable map-zoom" id="zoom-minus">-</span> </div></div></div>';
+htmlFragment = '<div id="minimapbg"> <div class="posy" id="posyt"> <div id="minimap-text"></div><div id="minimap-box"> <canvas id="minimap"></canvas> <canvas id="minimap-board"></canvas> <canvas id="minimap-cursor"></canvas> </div><div id="minimap-config"> <span class="map-clickable" id="hide-map">Gizle</span> | <span class="map-clickable" id="follow-mouse">Fareyi takip et</span> | <span class="map-clickable" id="toggle-grid">Izgara </span> | Yakınlaştırma: <span class="map-clickable map-zoom" id="zoom-plus">+</span> | <span class="map-clickable map-zoom" id="zoom-minus">-</span> </div></div></div>'; 
 window.addEventListener('load', function () {
     document.getElementById('coord').value = GM_getValue('coord', '');
     re = /(.*)@(.*),(.*)/g;
@@ -378,7 +378,7 @@ setInterval(function () {
             var xloop = i - yloop * w;
             var clr = ['255,255,255', '228,228,228', '136,136,136', '34,34,34', '255,167,209', '229,0,0', '229,149,0', '160,106,66', '229,217,0', '148,224,68', '2,190,1', '0,211,221', '0,131,199', '0,0,234', '207,110,228', '130,0,128', '0,0,0'].indexOf(pixels[i * 4] + ',' + pixels[i * 4 + 1] + ',' + pixels[i * 4 + 2]);
             if (clr == -1) {
-                alert('Cor não suportada em ' + xloop + ', ' + yloop + '. Todos os pixels não suportados ficarão transparentes');
+                alert('Renk desteklenmiyor ' + xloop + ', ' + yloop + '. Desteklenmeyen tüm pikseller şeffaf olacak! http://pix.rd.net.br/conversor/ Bu Linkden düzeltmeye çalışın! ');
                 return;
             } else if (clr == 16)
                 trnsprntPxls++;
